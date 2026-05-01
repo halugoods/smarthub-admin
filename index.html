@@ -5,25 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Creator Hub - Halu Goods</title>
     
-    <!-- Meta untuk Android & Umum (Menggunakan file logo.png) -->
     <link rel="icon" type="image/png" href="logo.png">
     <meta name="theme-color" content="#333333">
-
-    <!-- Meta khusus untuk iOS (iPhone/iPad) -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Creator Hub">
     <link rel="apple-touch-icon" href="logo.png">
 
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #333333; }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #333333; font-family: 'Segoe UI', sans-serif;}
+        
+        /* Pengaturan bingkai utama */
         iframe { width: 100%; height: 100%; border: none; display: block; }
+        
+        /* Tombol Evakuasi Anti-Error */
+        .float-btn {
+            position: fixed; 
+            bottom: 30px; 
+            right: 20px; 
+            background: rgba(0, 0, 0, 0.85); 
+            color: #ffffff;
+            padding: 12px 18px; 
+            border-radius: 25px; 
+            text-decoration: none; 
+            font-size: 13px; 
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5); 
+            z-index: 9999; 
+            border: 1px solid #555;
+            backdrop-filter: blur(5px);
+        }
+        .float-btn:active { background: #9B0004; border-color: #9B0004; }
     </style>
 </head>
 <body>
 
-    <!-- PERHATIKAN: Langsung tambahkan ?mode=admin di akhir link GAS -->
-    <iframe id="gas-frame" src="https://script.google.com/macros/s/AKfycbwUl0LS6XEvU_yIxdyPX8eeR9KWg6YlHLgOtquYP-IVwDqdNP9i9P_0NOlkRj-CA3r3/exec?mode=admin" allowfullscreen></iframe>
+    <!-- Tombol ini akan menyelamatkan HP yang memblokir iframe -->
+    <a href="https://script.google.com/macros/s/AKfycbwUl0LS6XEvU_yIxdyPX8eeR9KWg6YlHLgOtquYP-IVwDqdNP9i9P_0NOlkRj-CA3r3/exec?mode=admin" target="_blank" class="float-btn">
+        🚀 Buka Sistem (Jika Layar Blank)
+    </a>
+
+    <!-- Iframe dengan izin keamanan maksimal -->
+    <iframe id="gas-frame" 
+            src="https://script.google.com/macros/s/AKfycbwUl0LS6XEvU_yIxdyPX8eeR9KWg6YlHLgOtquYP-IVwDqdNP9i9P_0NOlkRj-CA3r3/exec?mode=admin" 
+            allowfullscreen 
+            sandbox="allow-scripts allow-top-navigation allow-top-navigation-by-user-activation allow-forms allow-same-origin allow-popups allow-downloads">
+    </iframe>
 
 </body>
 </html>
